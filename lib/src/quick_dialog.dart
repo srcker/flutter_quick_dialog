@@ -187,9 +187,9 @@ class QuickDialog {
         TextStyle? titleTextStyle,
         TextStyle? contentTextStyle,
         String? cancelText,
-        String? confimText,
+        String? confirmText,
         TextStyle? cancelTextStyle,
-        TextStyle? confimTextStyle,
+        TextStyle? confirmTextStyle,
         bool? dismissOnTap, // 是否点击遮罩关闭
 		EdgeInsets? contentPadding, // 内容内边距
 		EdgeInsets? contentMargin, // 内容内边距
@@ -210,9 +210,9 @@ class QuickDialog {
             contentMargin: contentMargin,
             contentPadding: contentPadding,
             cancelText: cancelText,
-            confimText: confimText,
+            confirmText: confirmText,
             cancelTextStyle: cancelTextStyle,
-            confimTextStyle: confimTextStyle,
+            confirmTextStyle: confirmTextStyle,
             confirmCallback: confirmCallback,
             cancelCallback: cancelCallback,
             dismissOnTap: dismissOnTap,

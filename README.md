@@ -77,7 +77,7 @@ void main() {
 QuickDialog.showModal(
   title: "系统提示",
   content: "确认要删除这条数据吗？",
-  confimText: "确认删除",
+  confirmText: "确认删除",
   cancelText: "取消操作",
   confirmCallback: () => print("确认操作"),
   cancelCallback: () => print("取消操作"),
@@ -96,27 +96,30 @@ QuickDialog.dismiss();
 
 ## ⚙️ 参数说明
 
-### showModal 方法
 
-String? title,
-String? content,
-TextStyle? titleTextStyle,
-TextStyle? contentTextStyle,
-String? cancelText,
-String? confimText,
-TextStyle? cancelTextStyle,
-TextStyle? confimTextStyle,
-bool? dismissOnTap, // 是否点击遮罩关闭
-EdgeInsets? contentPadding, // 内容内边距
-EdgeInsets? contentMargin, // 内容内边距
-BorderRadius? radius,
-QuickDialogAnimationStyle? animation,
-QuickDialogPosition? position,
-QuickDialogMaskType? maskType,
-QuickDialogButtonAlignment? buttonAlignment,
-QuickDialogConfirmCallback? confirmCallback,
-QuickDialogCancelCallback? cancelCallback,
-QuickDialogDismissCallback? dismissCallback
+### showModal 方法参数说明
+
+| 参数名              | 类型                                  | 说明                                                                 |
+|---------------------|-------------------------------------|--------------------------------------------------------------------|
+| title               | String?                             | 弹窗标题文本内容                                                     |
+| content             | String?                             | 弹窗正文文本内容                                                     |
+| titleTextStyle      | TextStyle?                          | 标题文本样式                                                         |
+| contentTextStyle    | TextStyle?                          | 正文文本样式                                                         |
+| cancelText          | String?                             | 取消按钮文本                                                         |
+| confirmText         | String?                             | 确认按钮文本                                                         |
+| cancelTextStyle     | TextStyle?                          | 取消按钮文本样式                                                     |
+| confirmTextStyle    | TextStyle?                          | 确认按钮文本样式                                                     |
+| dismissOnTap        | bool?                               | 点击遮罩层是否关闭弹窗                                               |
+| contentPadding      | EdgeInsets?                         | 内容区域的内边距                                                     |
+| contentMargin       | EdgeInsets?                         | 内容区域的外边距                                                     |
+| radius              | BorderRadius?                       | 弹窗边框圆角半径                                                     |
+| animation           | QuickDialogAnimationStyle?          | 动画样式（可选：fade\|scale\|slideUp\|slideDown\|slideLeft\|slideRight）|
+| position            | QuickDialogPosition?                | 显示位置（可选：top\|center\|bottom）                                |
+| maskType            | QuickDialogMaskType?                | 遮罩类型（可选：transparent\|translucent）                           |
+| buttonAlignment     | QuickDialogButtonAlignment?         | 按钮排列方式（可选：left\|right\|spaceBetween）                      |
+| confirmCallback     | QuickDialogConfirmCallback?         | 确认按钮点击回调（返回bool控制是否关闭弹窗）                         |
+| cancelCallback      | QuickDialogCancelCallback?          | 取消按钮点击回调（返回bool控制是否关闭弹窗）                         |
+| dismissCallback     | QuickDialogDismissCallback?         | 弹窗完全关闭后的回调                                                 |
 
 
 ### 动画类型枚举
@@ -153,7 +156,7 @@ QuickDialog.instance
 
 // 自定义按钮样式
 QuickDialog.showModal(
-  confimTextStyle: TextStyle(
+  confirmTextStyle: TextStyle(
     color: Colors.red,
     fontWeight: FontWeight.bold
   ),
@@ -167,9 +170,6 @@ QuickDialog.showModal(
 ## ⚠️ 注意事项
 
 1. **必须初始化**：在 MaterialApp 中调用 `QuickDialog.init()`
-2. **自定义动画**：当使用 `custom` 动画时需要提供 `customAnimation` 参数
-3. **状态管理**：通过 `QuickDialogStatusCallback` 监听对话框状态变化
-4. **性能优化**：长列表内容建议使用 `ListView.builder`
 
 
 ## Open Source License

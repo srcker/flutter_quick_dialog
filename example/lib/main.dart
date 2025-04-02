@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quick_dialog/quick_dialog.dart';
+import 'package:flutter_quick_dialog/quick_dialog.dart';
 
 void main() {
   runApp(const MyApp());
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
                 dismissCallback: ()=>print("消失了！！"),
                 cancelText: "辅助操作",
-                confimText: "主操作",
+                confirmText: "主操作",
                 cancelCallback: () => QuickDialog.dismiss(),
                 confirmCallback: ()=> QuickDialog.dismiss(),
               ),
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
                 dismissCallback: ()=>print("消失了！！"),
                 cancelText: "辅助操作",
-                confimText: "主操作",
+                confirmText: "主操作",
                 buttonAlignment: QuickDialogButtonAlignment.vertical,
                 cancelCallback: () => QuickDialog.dismiss(),
                 confirmCallback: ()=> QuickDialog.dismiss(),
@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
                 dismissCallback: ()=>print("消失了！！"),
                 cancelText: "辅助操作",
-                confimText: "主操作",
+                confirmText: "主操作",
                 contentMargin: EdgeInsets.zero,
                 radius: const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
                 position: QuickDialogPosition.top,
@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
                 dismissCallback: ()=>print("消失了！！"),
                 cancelText: "辅助操作",
-                confimText: "主操作",
+                confirmText: "主操作",
                 contentMargin: EdgeInsets.zero,
                 radius: const BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                 position: QuickDialogPosition.bottom,

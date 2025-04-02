@@ -12,9 +12,9 @@ class QuickDialogModal extends StatefulWidget {
     TextStyle? titleTextStyle;
     TextStyle? contentTextStyle;
     String? cancelText;
-    String? confimText;
+    String? confirmText;
     TextStyle? cancelTextStyle;
-    TextStyle? confimTextStyle;
+    TextStyle? confirmTextStyle;
     bool? dismissOnTap;
     EdgeInsets? contentPadding;
     EdgeInsets? contentMargin;
@@ -31,9 +31,9 @@ class QuickDialogModal extends StatefulWidget {
         this.titleTextStyle,
         this.contentTextStyle,
         this.cancelText,
-        this.confimText,
+        this.confirmText,
         this.cancelTextStyle,
-        this.confimTextStyle,
+        this.confirmTextStyle,
         this.dismissOnTap,
         this.contentPadding,
         this.contentMargin,
@@ -127,7 +127,7 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                             ),
 
                         Visibility(
-                            visible: widget.cancelText != null && widget.confimText != null,
+                            visible: widget.cancelText != null && widget.confirmText != null,
                             child: Container(
                                 width: QuickDialogTheme.lineWidth,
                                 height: 64,
@@ -135,7 +135,7 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                             ),
                         ),
 
-                        if(widget.confimText != null)
+                        if(widget.confirmText != null)
                                 Flexible(
                                     fit: FlexFit.tight,
                                     child: MaterialButton(
@@ -143,7 +143,7 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                                         height: 64,
                                         color: QuickDialogTheme.backgroud,
                                         elevation: 0,
-                                        child: Text(widget.confimText.toString(), style: widget.confimTextStyle ?? QuickDialogTheme.confirmTextStyle),
+                                        child: Text(widget.confirmText.toString(), style: widget.confirmTextStyle ?? QuickDialogTheme.confirmTextStyle),
                                     ),
                                 ),
 
@@ -160,7 +160,7 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                     children: [
                         
 
-                        if(widget.confimText != null)
+                        if(widget.confirmText != null)
                             Row(
                                 children: [
                                     Expanded(child: MaterialButton(
@@ -168,13 +168,13 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                                         height: 64,
                                         color: QuickDialogTheme.backgroud,
                                         elevation: 0,
-                                        child: Text(widget.confimText.toString(), style: widget.confimTextStyle ?? QuickDialogTheme.confirmTextStyle),
+                                        child: Text(widget.confirmText.toString(), style: widget.confirmTextStyle ?? QuickDialogTheme.confirmTextStyle),
                                     ))
                                 ],
                             ),
 
                         Visibility(
-                            visible: widget.cancelText != null && widget.confimText != null,
+                            visible: widget.cancelText != null && widget.confirmText != null,
                             child: Container(
                                 height: QuickDialogTheme.lineWidth,
                                 color: QuickDialogTheme.lineColor

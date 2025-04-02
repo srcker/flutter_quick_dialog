@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
-
 import 'package:flutter/material.dart';
 
 import '../quick_dialog.dart';
@@ -9,25 +6,25 @@ import '../theme.dart';
 /// 
 class QuickDialogModal extends StatefulWidget {
 
-    String? title;
-    String? content;
-    TextStyle? titleTextStyle;
-    TextStyle? contentTextStyle;
-    String? cancelText;
-    String? confirmText;
-    TextStyle? cancelTextStyle;
-    TextStyle? confirmTextStyle;
-    bool? dismissOnTap;
-    EdgeInsets? contentPadding;
-    EdgeInsets? contentMargin;
-    BorderRadius? radius;
-    QuickDialogPosition? position;
-    QuickDialogButtonAlignment? buttonAlignment;
-    QuickDialogConfirmCallback? confirmCallback;
-    QuickDialogCancelCallback? cancelCallback;
-    QuickDialogDismissCallback? dismissCallback;
+    final String? title;
+    final String? content;
+    final TextStyle? titleTextStyle;
+    final TextStyle? contentTextStyle;
+    final String? cancelText;
+    final String? confirmText;
+    final TextStyle? cancelTextStyle;
+    final TextStyle? confirmTextStyle;
+    final bool? dismissOnTap;
+    final EdgeInsets? contentPadding;
+    final EdgeInsets? contentMargin;
+    final BorderRadius? radius;
+    final QuickDialogPosition? position;
+    final QuickDialogButtonAlignment? buttonAlignment;
+    final QuickDialogConfirmCallback? confirmCallback;
+    final QuickDialogCancelCallback? cancelCallback;
+    final QuickDialogDismissCallback? dismissCallback;
 
-    QuickDialogModal({
+    const QuickDialogModal({
         super.key,
         this.title,
         this.content,
@@ -40,20 +37,20 @@ class QuickDialogModal extends StatefulWidget {
         this.dismissOnTap,
         this.contentPadding,
         this.contentMargin,
+        this.radius,
+        this.position,
         this.buttonAlignment = QuickDialogButtonAlignment.horizontal,
         this.confirmCallback,
         this.cancelCallback,
         this.dismissCallback,
-        this.position,
-        this.radius,
     });
         
     @override
-    State<StatefulWidget> createState() => QuickDialogModalState();
+    State<StatefulWidget> createState() => _QuickDialogModalState();
         
 }
 
-class QuickDialogModalState extends State<QuickDialogModal>{
+class _QuickDialogModalState extends State<QuickDialogModal>{
 
     late bool dismissOnTap;
 

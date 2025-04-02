@@ -1,0 +1,1 @@
+/Users/sinda/dev/flutter/github/flutter_quick_dialog/example/build/app/intermediates/cxx/Debug/1w2r3t2k/obj/arm64-v8a

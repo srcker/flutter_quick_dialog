@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:nativewrappers/_internal/vm/lib/ffi_allocation_patch.dart';
+
 import 'package:flutter/material.dart';
 
 import '../quick_dialog.dart';
@@ -23,6 +25,7 @@ class QuickDialogModal extends StatefulWidget {
     QuickDialogButtonAlignment? buttonAlignment;
     QuickDialogConfirmCallback? confirmCallback;
     QuickDialogCancelCallback? cancelCallback;
+    QuickDialogDismissCallback? dismissCallback;
 
     QuickDialogModal({
         super.key,
@@ -40,6 +43,7 @@ class QuickDialogModal extends StatefulWidget {
         this.buttonAlignment = QuickDialogButtonAlignment.horizontal,
         this.confirmCallback,
         this.cancelCallback,
+        this.dismissCallback,
         this.position,
         this.radius,
     });
@@ -51,13 +55,13 @@ class QuickDialogModal extends StatefulWidget {
 
 class QuickDialogModalState extends State<QuickDialogModal>{
 
-    bool? dismissOnTap;
+    late bool dismissOnTap;
 
 
     @override
     void initState() {
         super.initState();
-        dismissOnTap = widget.dismissOnTap ?? QuickDialog.instance.dismissOnTap;
+        dismissOnTap = widget.dismissOnTap ?? (QuickDialog.instance.dismissOnTap ?? false);
     }
 
 
@@ -93,7 +97,7 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                                 ),
                             ),
 
-                            buttons()
+                            buttons(dismissOnTap)
 
                         ],
                     ),
@@ -103,7 +107,7 @@ class QuickDialogModalState extends State<QuickDialogModal>{
     }
 
 
-    Widget buttons(){
+    Widget buttons(bool dismissOnTap){
 
         if(widget.buttonAlignment == QuickDialogButtonAlignment.horizontal){
             return Container(
@@ -118,7 +122,13 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                             Flexible(
                                 fit: FlexFit.tight,
                                 child: MaterialButton(
-                                    onPressed: () => widget.cancelCallback?.call(),
+                                    onPressed: () async {
+                                        if(dismissOnTap){
+                                           await QuickDialog.dismiss();
+                                           widget.dismissCallback?.call();
+                                        }
+                                        widget.cancelCallback?.call();
+                                    },
                                     height: 64,
                                     color: QuickDialogTheme.backgroud,
                                     elevation: 0,
@@ -139,7 +149,13 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                                 Flexible(
                                     fit: FlexFit.tight,
                                     child: MaterialButton(
-                                        onPressed: () => widget.confirmCallback?.call(),
+                                        onPressed: () async {
+                                            if(dismissOnTap){
+                                                await QuickDialog.dismiss();
+                                                widget.dismissCallback?.call();
+                                            }
+                                            widget.confirmCallback?.call();
+                                        },
                                         height: 64,
                                         color: QuickDialogTheme.backgroud,
                                         elevation: 0,
@@ -164,7 +180,13 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                             Row(
                                 children: [
                                     Expanded(child: MaterialButton(
-                                        onPressed: () => widget.confirmCallback?.call(),
+                                        onPressed: () async {
+                                            if(dismissOnTap){
+                                                await QuickDialog.dismiss();
+                                                widget.dismissCallback?.call();
+                                            }
+                                            widget.confirmCallback?.call();
+                                        },
                                         height: 64,
                                         color: QuickDialogTheme.backgroud,
                                         elevation: 0,
@@ -185,7 +207,13 @@ class QuickDialogModalState extends State<QuickDialogModal>{
                             Row(
                                 children: [
                                     Expanded(child: MaterialButton(
-                                        onPressed: () => widget.cancelCallback?.call(),
+                                        onPressed: () async {
+                                            if(dismissOnTap){
+                                                await QuickDialog.dismiss();
+                                                widget.dismissCallback?.call();
+                                            }
+                                            widget.cancelCallback?.call();
+                                        },
                                         height: 64,
                                         color: QuickDialogTheme.backgroud,
                                         elevation: 0,

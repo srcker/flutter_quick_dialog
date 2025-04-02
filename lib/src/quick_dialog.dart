@@ -150,8 +150,7 @@ class QuickDialog {
 
 	QuickDialog._internal() {
 		style = QuickDialogStyle.light;
-		maskType = QuickDialogMaskType.none;
-		animationStyle = QuickDialogAnimationStyle.offset;
+		maskType = QuickDialogMaskType.black;
         position = QuickDialogPosition.center;
         buttonAlignment = QuickDialogButtonAlignment.horizontal;
         lineWidth = 0.5;
@@ -215,6 +214,7 @@ class QuickDialog {
             confirmTextStyle: confirmTextStyle,
             confirmCallback: confirmCallback,
             cancelCallback: cancelCallback,
+            dismissCallback: dismissCallback,
             dismissOnTap: dismissOnTap,
             buttonAlignment: buttonAlignment ?? QuickDialogButtonAlignment.horizontal,
         ),

@@ -158,8 +158,6 @@ class QuickDialogTheme {
     /// 直接返回 [QuickDialog.instance.radius] 的配置值
     static BorderRadius get radius => QuickDialog.instance.radius;
 
-
-
     /// 获取点击外部是否关闭对话框配置
     /// 直接返回 [QuickDialog.instance.dismissOnTap] 的配置值
     static bool? get dismissOnTap => QuickDialog.instance.dismissOnTap;

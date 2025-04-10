@@ -158,6 +158,7 @@ class QuickDialog {
         dismissOnTap = true;
         margin = const EdgeInsets.symmetric(horizontal: 35);
         padding = EdgeInsets.zero;
+        animationStyle = QuickDialogAnimationStyle.opacity;
         animationDuration = const Duration(milliseconds: 200);
 	}
 

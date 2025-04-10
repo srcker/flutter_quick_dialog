@@ -2,7 +2,7 @@
 > A lightweight Dialog library for Flutter, which is implemented purely in Flutter and enables you to easily call the Dialog and loading functions without the need for context. 
 
 
-[![Pub Version](https://img.shields.io/pub/v/quick_dialog)](https://pub.dev/packages/flutter_quick_dialog)
+[![Pub Version](https://img.shields.io/pub/v/flutter_quick_dialog)](https://pub.dev/packages/flutter_quick_dialog)
 [![GitHub License](https://img.shields.io/github/license/srcker/flutter_quick_dialog)](https://github.com/srcker/flutter_quick_dialog)
 
 

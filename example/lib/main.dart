@@ -87,6 +87,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () => QuickDialog.showModal(
                 maskType: QuickDialogMaskType.black,
+                title: "提示",
+                content: "确定要删除该用户信息吗 \n 我可以自定义换行",
+                dismissCallback: ()=>print("消失了！！"),
+                cancelText: "辅助操作",
+                confirmText: "主操作",
+                confirmTextStyle: QuickDialogTheme.deleteTextStyle,
+                cancelCallback: () => QuickDialog.dismiss(),
+                confirmCallback: ()=> QuickDialog.dismiss(),
+              ),
+              child: const Text("删除确认"),
+            ),
+
+            ElevatedButton(
+              onPressed: () => QuickDialog.showModal(
+                maskType: QuickDialogMaskType.black,
                 title: "弹窗标题",
                 content: "弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内",
                 dismissCallback: ()=>print("消失了！！"),

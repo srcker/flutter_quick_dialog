@@ -25,7 +25,7 @@ import 'package:quick_dialog/quick_dialog.dart';
 
 # QuickDialog Flutter 插件
 
-![](https://img.shields.io/badge/Flutter-3.19.5-blue) ![](https://img.shields.io/badge/Dart-3.3.0-blue) ![](https://img.shields.io/badge/license-MIT-green)
+![](https://img.shields.io/badge/Flutter-3.29.2-blue) ![](https://img.shields.io/badge/Dart-3.3.0-blue) ![](https://img.shields.io/badge/license-MIT-green)
 
 一个轻量高效的Flutter对话框解决方案，提供丰富的自定义配置和流畅的动画效果。
 
@@ -117,8 +117,8 @@ QuickDialog.dismiss();
 | position            | QuickDialogPosition?                | 显示位置（可选：top\|center\|bottom）                                |
 | maskType            | QuickDialogMaskType?                | 遮罩类型（可选：transparent\|translucent）                           |
 | buttonAlignment     | QuickDialogButtonAlignment?         | 按钮排列方式（可选：left\|right\|spaceBetween）                      |
-| confirmCallback     | QuickDialogConfirmCallback?         | 确认按钮点击回调（返回bool控制是否关闭弹窗）                         |
-| cancelCallback      | QuickDialogCancelCallback?          | 取消按钮点击回调（返回bool控制是否关闭弹窗）                         |
+| confirmCallback     | QuickDialogConfirmCallback?         | 确认按钮点击回调                         |
+| cancelCallback      | QuickDialogCancelCallback?          | 取消按钮点击回调                         |
 | dismissCallback     | QuickDialogDismissCallback?         | 弹窗完全关闭后的回调                                                 |
 
 
@@ -164,6 +164,10 @@ QuickDialog.showModal(
     color: Colors.grey,
     decoration: TextDecoration.underline
   ),
+);
+// 自定义按钮样式
+QuickDialog.showModal(
+  cancelTextStyle: QuickDialogTheme.deleteTextStyle
 );
 ```
 
